@@ -10,6 +10,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import ChoixLangue from '@/views/ChoixLangue.vue';
 import Anglais from '@/views/Anglais.vue';
 import Portugais from '@/views/Portugais.vue';
+import ImporterDesMots from '@/views/ImporterDesMots.vue';
 const routes = [
   {
     path: '/',
@@ -25,6 +26,11 @@ const routes = [
     path: '/portugais',
     name: 'Portugais',
     component: Portugais,
+  },
+  {
+    path: '/importer-des-mots',
+    name: 'ImporterDesMots',
+    component: ImporterDesMots,
   }
 ]
 
