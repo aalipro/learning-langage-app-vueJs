@@ -2,7 +2,7 @@
 const express = require('express');
 const browserSync = require('browser-sync');
 const cors = require('cors');  // Importer le module CORS
-const { handleCSVUpload } = require('./csvHandler');  // Importer la fonction handleCSVUpload
+const { handleCSVUpload,  getTousLesMots, getWordsByLanguage} = require('./csvHandler');  // Importer la fonction handleCSVUpload
 
 // Créer une application Express
 const app = express();
@@ -18,8 +18,13 @@ app.get('/', (req, res) => {
     res.send('Bonjour, monde !');
 });
 
+app.get('/mots', getTousLesMots);
+
+
 // Définir une route POST pour l'upload de CSV
 app.post('/api/upload-csv', handleCSVUpload);
+
+app.get('/word-by-language', getWordsByLanguage);
 
 // Écouter le port
 const port = 3001;
